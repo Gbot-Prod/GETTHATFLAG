@@ -15,9 +15,15 @@
         <span class="rounded-md bg-emerald-500 px-2 py-0.5 text-sm text-white">GTF</span>
         GETTHATFLAG
       </a>
+      {% if user.is_authenticated %}
       <div class="flex items-center gap-6 text-sm font-medium text-slate-600">
         <a href="{% url 'home' %}" class="hover:text-slate-900">Dashboard</a>
+        <form method="post" action="{% url 'logout' %}">
+          {% csrf_token %}
+          <button type="submit" class="hover:text-slate-900">Log out</button>
+        </form>
       </div>
+      {% endif %}
     </nav>
   </header>
 

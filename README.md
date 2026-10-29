@@ -13,6 +13,7 @@ Requirements: [uv](https://docs.astral.sh/uv/), `make`, `curl`.
 
 ```bash
 make setup   # install deps, Tailwind CLI, copy .env.example -> .env, migrate
+make user    # create your login (the single owner account)
 make dev     # build CSS and start http://127.0.0.1:8000
 ```
 

@@ -1,8 +1,8 @@
 from django.urls import reverse
 
 
-def test_home_page_renders(client):
-    response = client.get(reverse("home"))
+def test_home_page_renders(admin_client):
+    response = admin_client.get(reverse("home"))
 
     assert response.status_code == 200
     assert b"GETTHATFLAG" in response.content

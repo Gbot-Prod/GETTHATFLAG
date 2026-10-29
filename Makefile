@@ -1,4 +1,4 @@
-.PHONY: setup css css-watch dev test lint format
+.PHONY: setup css css-watch dev test lint format user
 
 TAILWIND = bin/tailwindcss -i platform/static_src/input.css -o platform/static/css/app.css
 MANAGE = uv run python platform/manage.py
@@ -31,3 +31,7 @@ lint:
 format:
 	uv run ruff check --fix .
 	uv run ruff format .
+
+## Create the single owner account (also gives access to /admin/)
+user:
+	$(MANAGE) createsuperuser

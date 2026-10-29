@@ -25,12 +25,12 @@ nightly backups running.
 - [x] App runs locally with one command
 
 ## Phase 2 — Login
-- [ ] `accounts` app using Django's built-in auth
-- [ ] Login / logout pages
-- [ ] Every page requires login (except the login page)
-- [ ] Rate-limit failed logins with django-axes
-- [ ] Management command or docs for creating the single user
-- [ ] Tests: anonymous user is redirected to login; lockout after repeated failures
+- [x] `accounts` app using Django's built-in auth
+- [x] Login / logout pages
+- [x] Every page requires login (except the login page)
+- [x] Rate-limit failed logins with django-axes
+- [x] Management command or docs for creating the single user
+- [x] Tests: anonymous user is redirected to login; lockout after repeated failures
 
 ## Phase 3 — Challenge data model
 - [ ] `challenges` app with models:

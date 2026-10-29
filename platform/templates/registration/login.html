@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}Log in · GETTHATFLAG{% endblock %}
+
+{% block content %}
+<div class="mx-auto mt-12 max-w-sm rounded-2xl border border-slate-200 bg-white p-8 shadow-sm">
+  <h1 class="text-2xl font-bold">Log in</h1>
+  <p class="mt-1 text-sm text-slate-500">Welcome back, flag hunter.</p>
+
+  {% if form.non_field_errors %}
+  <div class="mt-4 rounded-lg bg-red-50 px-3 py-2 text-sm text-red-700">
+    {% for error in form.non_field_errors %}{{ error }}{% endfor %}
+  </div>
+  {% endif %}
+
+  <form method="post" class="mt-6 space-y-4">
+    {% csrf_token %}
+    <input type="hidden" name="next" value="{{ next }}">
+    <div>
+      <label for="id_username" class="block text-sm font-medium">Username</label>
+      <input id="id_username" name="username" type="text" autocomplete="username" required autofocus
+             value="{{ form.username.value|default:'' }}"
+             class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-500/30">
+    </div>
+    <div>
+      <label for="id_password" class="block text-sm font-medium">Password</label>
+      <input id="id_password" name="password" type="password" autocomplete="current-password" required
+             class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-500/30">
+    </div>
+    <button type="submit"
+            class="w-full rounded-lg bg-emerald-500 px-4 py-2 font-semibold text-white hover:bg-emerald-600">
+      Log in
+    </button>
+  </form>
+</div>
+{% endblock %}

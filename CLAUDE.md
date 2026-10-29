@@ -91,6 +91,7 @@ from a gentle nudge to nearly the answer.
 
 ```bash
 make setup      # first-time: deps, Tailwind CLI, .env, migrate
+make user       # create the owner account (createsuperuser)
 make dev        # build CSS + runserver on http://127.0.0.1:8000
 make test       # pytest
 make lint       # ruff check + format check
@@ -103,3 +104,8 @@ make css-watch  # rebuild Tailwind on template changes
 Dependencies are managed with **uv** (`pyproject.toml`, `uv.lock`). Django lives in `platform/`
 with the settings package `config/`; static HTMX is vendored in `platform/static/js/`, and
 Tailwind's source is `platform/static_src/input.css` (output is git-ignored).
+
+Login is enforced globally by Django's `LoginRequiredMiddleware`: new views are private by
+default. Only mark a view `@login_not_required` if it truly must be public. Tests live in
+`platform/tests/test_*.py`; use pytest-django's `admin_client` or `client.force_login()` for
+logged-in requests (django-axes needs a real request, so `client.login()` won't work).
