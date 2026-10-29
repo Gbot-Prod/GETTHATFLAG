@@ -89,12 +89,17 @@ from a gentle nudge to nearly the answer.
 
 ## Commands
 
-Fill these in as the project is scaffolded:
-
 ```bash
-# run locally
-# run tests
-# lint / format
-# sync challenges
-# full stack via Docker Compose
+make setup      # first-time: deps, Tailwind CLI, .env, migrate
+make dev        # build CSS + runserver on http://127.0.0.1:8000
+make test       # pytest
+make lint       # ruff check + format check
+make format     # ruff auto-fix + format
+make css-watch  # rebuild Tailwind on template changes
+# sync challenges            (Phase 4)
+# full stack via Docker Compose (Phase 8)
 ```
+
+Dependencies are managed with **uv** (`pyproject.toml`, `uv.lock`). Django lives in `platform/`
+with the settings package `config/`; static HTMX is vendored in `platform/static/js/`, and
+Tailwind's source is `platform/static_src/input.css` (output is git-ignored).

@@ -9,20 +9,20 @@ nightly backups running.
 ---
 
 ## Phase 0 — Project setup
-- [ ] Add `.gitignore` (Python, `.env`, `db.sqlite3`, build outputs, `media/`)
-- [ ] Add `.env.example` listing every variable (Django secret, flags, DuckDNS token, backup keys) with dummy values
-- [ ] Add `README.md` with a short description and how to run locally
-- [ ] Set up Python project tooling (`pyproject.toml`, ruff, pytest)
-- [ ] Confirm `CLAUDE.md` is up to date
+- [x] Add `.gitignore` (Python, `.env`, `db.sqlite3`, build outputs, `media/`)
+- [x] Add `.env.example` listing every variable (Django secret, flags, DuckDNS token, backup keys) with dummy values
+- [x] Add `README.md` with a short description and how to run locally
+- [x] Set up Python project tooling (`pyproject.toml`, ruff, pytest)
+- [x] Confirm `CLAUDE.md` is up to date
 
 ## Phase 1 — Django platform skeleton
-- [ ] Create Django project in `platform/`
-- [ ] Settings read from environment variables (django-environ or similar)
-- [ ] SQLite database
-- [ ] Tailwind CSS set up (standalone CLI, no Node required)
-- [ ] HTMX included
-- [ ] Base layout template — clean, modern style (TryHackMe-like)
-- [ ] App runs locally with one command
+- [x] Create Django project in `platform/`
+- [x] Settings read from environment variables (django-environ or similar)
+- [x] SQLite database
+- [x] Tailwind CSS set up (standalone CLI, no Node required)
+- [x] HTMX included
+- [x] Base layout template — clean, modern style (TryHackMe-like)
+- [x] App runs locally with one command
 
 ## Phase 2 — Login
 - [ ] `accounts` app using Django's built-in auth

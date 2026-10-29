@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="rounded-2xl bg-gradient-to-br from-slate-900 to-slate-700 p-8 text-white shadow-sm">
+  <p class="text-sm font-semibold uppercase tracking-wider text-emerald-400">Welcome back</p>
+  <h1 class="mt-2 text-3xl font-bold">Ready to capture some flags?</h1>
+  <p class="mt-2 max-w-xl text-slate-300">
+    Pick a category, work through a learning path, and write up what you learn.
+  </p>
+</section>
+
+<section class="mt-8">
+  <h2 class="text-lg font-semibold">Categories</h2>
+  <div class="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+    {% for name, blurb in categories %}
+    <div class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
+      <h3 class="font-semibold">{{ name }}</h3>
+      <p class="mt-1 text-sm text-slate-500">{{ blurb }}</p>
+      <p class="mt-4 text-xs font-medium text-slate-400">Coming soon</p>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

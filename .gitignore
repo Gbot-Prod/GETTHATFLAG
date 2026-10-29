@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.ruff_cache/
+
+# Secrets and local data
+.env
+*.sqlite3
+*.sqlite3-journal
+media/
+
+# Build output
+bin/
+platform/static/css/
+platform/staticfiles/
+challenges/*/build/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
